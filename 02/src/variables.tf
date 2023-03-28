@@ -1,8 +1,15 @@
 ###cloud vars
-variable "token" {
+
+variable "sa_key_file" {
+  type        = string
+  default     = "key.json"
+  description = "Service account key file"
+}
+
+/* variable "token" {
   type        = string
   description = "OAuth-token; https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token"
-}
+}*/
 
 variable "cloud_id" {
   type        = string
@@ -31,11 +38,78 @@ variable "vpc_name" {
   description = "VPC network & subnet name"
 }
 
+variable "image_name" {
+  type    = string
+  default = "ubuntu-2004-lts"
+  description = "Image relase name"
+}
 
-###ssh vars
+### **** prefix name vms ****
 
-variable "vms_ssh_root_key" {
-  type        = string
-  default     = "<your_ssh_ed25519_key>"
-  description = "ssh-keygen -t ed25519"
+variable "prefix_name" {
+  type = map(string)
+  default = {
+    env     = "developer",
+    project = "platform"
+  }
+}
+
+### **** vm_web ****
+
+variable "vm_web_name" {
+  type    = string
+  default = "web"
+  description = "Instance name"
+}
+
+variable "vm_web_platform" {
+  type    = string
+  default = "standard-v1"
+  description = "Platform name"
+}
+
+variable "vm_web_resources" { 
+  type = map(number)
+  default = {
+    cores         = 2,
+    memory        = 1,
+    core_fraction = 5
+  }
+  description = "Costumize VM(core, RAM, core fraction)"
+}
+
+
+### **** vm_db ****
+
+variable "vm_db_name" {
+  type    = string
+  default = "db"
+  description = "Instance name"
+}
+
+variable "vm_db_platform" {
+  type    = string
+  default = "standard-v1"
+  description = "Platform name"
+}
+
+variable "vm_db_resources" { 
+  type = map(number)
+  default = {
+    cores         = 2,
+    memory        = 2,
+    core_fraction = 20
+  }
+  description = "Costumize VM (core, RAM, core fraction)"
+}
+
+### **** ssh ****
+
+variable "vms_ssh_resources" { 
+  type = map
+  default = {
+    serial-port-enable = 1,
+    ssh-key = "ubuntu:ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPBanJGCHc6lVJ9E1mDUuSblhDMoIPfPsiG2y9QdKWjS"
+  }
+  description = "vms ssh configuration"
 }

@@ -8,3 +8,6 @@
 
 # own secret vars store.
 personal.auto.tfvars
+
+#service account file key.json
+key.json
