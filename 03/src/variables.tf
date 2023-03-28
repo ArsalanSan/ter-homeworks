@@ -1,8 +1,17 @@
 ###cloud vars
+
+variable "sa_key_file" {
+  type        = string
+  default     = "key.json"
+  description = "Service account key file"
+}
+
+/*
 variable "token" {
   type        = string
   description = "OAuth-token; https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token"
 }
+*/
 
 variable "cloud_id" {
   type        = string
