@@ -7,8 +7,6 @@
     <list default="true" id="df1ed59c-04f6-4d2b-a47a-9f75dad0a115" name="Changes" comment="07-terraform-03-control-task1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/03/hw-03.md" beforeDir="false" afterPath="$PROJECT_DIR$/03/hw-03.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03/src/main.tf" beforeDir="false" afterPath="$PROJECT_DIR$/03/src/main.tf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03/src/variables.tf" beforeDir="false" afterPath="$PROJECT_DIR$/03/src/variables.tf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
