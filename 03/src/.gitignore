@@ -12,5 +12,7 @@ personal.auto.tfvars
 #service account file key.json
 key.json
 
-**/.idea
-.idea
+../../.idea
+../../.idea/*
+**/.idea/*
+.idea/*
