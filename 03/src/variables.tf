@@ -83,3 +83,14 @@ variable "custum_vms" {
   }))
   default = []
 }
+
+variable "disk" {
+  description = "Create new disk"
+  type = map
+  default = {
+    name = "new-disk"
+    type = "network-hdd"
+    zone = "ru-central1-a"
+    size = 1
+  }
+}

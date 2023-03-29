@@ -13,3 +13,10 @@ resource "yandex_vpc_subnet" "develop" {
   v4_cidr_blocks = var.default_cidr
 }
 
+resource "yandex_compute_disk" "disk" {
+  count = 3
+  name  = "${var.disk.name}-${count.index}"
+  type  = var.disk.type
+  zone  = var.default_zone
+  size  = var.disk.size
+}
