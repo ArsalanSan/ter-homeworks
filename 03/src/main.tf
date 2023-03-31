@@ -20,3 +20,9 @@ resource "yandex_compute_disk" "disk" {
   zone  = var.default_zone
   size  = var.disk.size
 }
+
+/* data "yandex_compute_disk" "d" {
+  disk_id = 
+} */
+
+ 
