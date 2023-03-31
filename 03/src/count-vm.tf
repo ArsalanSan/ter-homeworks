@@ -1,4 +1,4 @@
-/*resource "yandex_compute_instance" "count-vm" {
+resource "yandex_compute_instance" "count-vm" {
 
   name        = "count-vm-${count.index}"
   platform_id = var.vm_platforms.v1
@@ -28,4 +28,4 @@
     serial-port-enable = 1
     ssh-keys           = local.vms_ssh_root_key 
   } 
-}*/
+}

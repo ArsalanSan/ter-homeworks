@@ -1,4 +1,4 @@
-/*resource "yandex_compute_instance" "vms" {
+resource "yandex_compute_instance" "vms" {
   
   for_each = { for k,v in var.custum_vms: v.name => v }
 
@@ -31,4 +31,4 @@
     serial-port-enable = 1
     ssh-keys           = local.vms_ssh_root_key
   }
-}*/
+}

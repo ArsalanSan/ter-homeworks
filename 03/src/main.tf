@@ -21,8 +21,17 @@ resource "yandex_compute_disk" "disk" {
   size  = var.disk.size
 }
 
-/* data "yandex_compute_disk" "d" {
-  disk_id = 
-} */
 
- 
+resource "local_file" "hosts_cfg" {
+  content = templatefile("${path.module}/hosts.tftpl",
+
+    { 
+       foreach-vm = yandex_compute_instance.vms,
+       count-vm = yandex_compute_instance.count-vm,
+       mount-disk-vm = yandex_compute_instance.mount-disk-vm
+    } 
+  )
+
+  filename = "${abspath(path.module)}/inventory"
+} 
+
