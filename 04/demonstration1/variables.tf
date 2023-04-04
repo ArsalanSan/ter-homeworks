@@ -1,7 +1,9 @@
 ###cloud vars
-variable "token" {
+
+variable "sa_key_file" {
   type        = string
-  description = "OAuth-token; https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token"
+  default     = "key.json"
+  description = "Service account key file"
 }
 
 variable "cloud_id" {
@@ -31,7 +33,41 @@ variable "vpc_name" {
   description = "VPC network&subnet name"
 }
 
-variable "public_key" {
+variable username {
+  type = string
+}
+
+variable ssh_public_key {
+  type        = string
+  description = "Location of SSH public key."
+}
+
+variable packages {
   type    = string
   default = ""
+}
+
+variable dhcp {
+  type    = string
+  default = "true"
+}
+
+variable ip_address {
+  type    = string
+  default = ""
+}
+
+variable netmask {
+  type    = string
+  default = ""
+}
+
+variable gateway {
+  type    = string
+  default = ""
+}
+
+variable nameservers {
+  type    = list
+  default = []
 }

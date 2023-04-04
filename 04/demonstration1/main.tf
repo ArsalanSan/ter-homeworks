@@ -1,20 +1,3 @@
-terraform {
-  required_providers {
-    yandex = {
-      source = "yandex-cloud/yandex"
-    }
-  }
-  required_version = ">=0.13"
-}
-
-provider "yandex" {
-  token     = var.token
-  cloud_id  = var.cloud_id
-  folder_id = var.folder_id
-  zone      = var.default_zone
-}
-
-
 
 #создаем облачную сеть
 resource "yandex_vpc_network" "develop" {
@@ -50,5 +33,11 @@ module "test-vm" {
 #Пример передачи cloud-config в ВМ для демонстрации №3
 data "template_file" "cloudinit" {
  template = file("./cloud-init.yml")
+
+ vars = {
+    username           = var.username
+    ssh_public_key     = file(var.ssh_public_key)
+    packages           = var.packages
+  }
 }
 
