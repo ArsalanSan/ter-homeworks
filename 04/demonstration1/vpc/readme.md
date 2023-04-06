@@ -34,5 +34,5 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_vpc_network_id"></a> [vpc\_network\_id](#output\_vpc\_network\_id) | n/a |
-| <a name="output_vpc_subnet_id"></a> [vpc\_subnet\_id](#output\_vpc\_subnet\_id) | n/a |
+| <a name="output_vpc_network_id"></a> [vpc\_network\_id](#output\_vpc\_network\_id) | Print network id |
+| <a name="output_vpc_subnet_id"></a> [vpc\_subnet\_id](#output\_vpc\_subnet\_id) | Print subnet id |
