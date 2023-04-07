@@ -2,13 +2,14 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=0.13 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.3.0 |
+| <a name="requirement_yandex"></a> [yandex](#requirement\_yandex) | >=0.99.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_yandex"></a> [yandex](#provider\_yandex) | n/a |
+| <a name="provider_yandex"></a> [yandex](#provider\_yandex) | >=0.99.0 |
 
 ## Modules
 
