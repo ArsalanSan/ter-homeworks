@@ -3,7 +3,8 @@ output "vpc_id" {
   value       = module.vpc.vpc_id
 }
 
-output "subnets_vpc" {
-  description = "Mapping Subnet Name to Subnet ID"
-  value       = module.vpc.subnets_locations
+output "map_zoneid" {
+  description = "Mapping Zone to Subnet ID"
+  value       = module.vpc.map_zone_id
 }
+
