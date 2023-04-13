@@ -4,6 +4,7 @@ resource "yandex_vpc_subnet" "develop" {
   zone           = each.key
   network_id     = var.network_id
   v4_cidr_blocks = [ each.value ]
+  description = "Create subnet"
 }
 
 resource "yandex_mdb_mysql_cluster" "mysql_cluster" {
@@ -27,4 +28,5 @@ resource "yandex_mdb_mysql_cluster" "mysql_cluster" {
   }
   
   depends_on = [ yandex_vpc_subnet.develop ]
+  description = "Create cluster mysql"
 }
