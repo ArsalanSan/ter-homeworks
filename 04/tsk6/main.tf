@@ -1,10 +1,9 @@
 provider "vault" {
- address = "http://localhost:8200/"
- skip_tls_verify = true
- token = "education"
+ address = var.vault_addr
+ skip_tls_verify = var.vault_skip_tls_verify
+ token = var.vault_admin_token
 }
 
-/*
 resource "vault_generic_secret" "example" {
   path = "secret/example"
 
@@ -15,13 +14,14 @@ resource "vault_generic_secret" "example" {
     } 
   EOT
 }
-*/
 
 data "vault_generic_secret" "example"{
  path = "secret/example"
+ depends_on = [ vault_generic_secret.example ]
 }
 
 output "vault_example" {
   value = "${data.vault_generic_secret.example.data["secret1"]}"
   sensitive = true
+  description = "output secret"
 }
